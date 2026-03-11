@@ -29,7 +29,7 @@ export function computeHorseshoeLayout(
   const innerRadius = 80;
   const rowSpacing = dotRadius * 2.5;
   const arcGap = dotRadius * 1.5; // Gap between dots along arc
-  const seatsPerRow = Math.floor((Math.PI * innerRadius) / (arcGap * 2 + dotRadius * 2));
+  void Math.floor((Math.PI * innerRadius) / (arcGap * 2 + dotRadius * 2));
 
   return {
     treasury: layoutSide(
@@ -123,7 +123,7 @@ export function computeRectangleLayout(
 ): SeatPosition[] {
   const positions: SeatPosition[] = [];
   const cols = Math.floor(width / (dotRadius * 2.5));
-  const rows = Math.ceil(count / cols);
+  void Math.ceil(count / cols);
   const colSpacing = width / (cols + 1);
   const rowSpacing = dotRadius * 3;
 

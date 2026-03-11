@@ -46,7 +46,6 @@ export function analyzeBillText(text: string): BillObject {
   const issuePositions: Partial<Record<PolicyDimension, number>> = {};
 
   let totalRightMatches = 0;
-  let totalLeftMatches = 0;
   let totalMatches = 0;
 
   for (const dim of POLICY_DIMENSIONS) {
@@ -65,7 +64,7 @@ export function analyzeBillText(text: string): BillObject {
         0.15 + (rightCount / dimTotal) * 0.7;
 
       totalRightMatches += rightCount;
-      totalLeftMatches += leftCount;
+      void leftCount; // Used for future lean detection refinement
       totalMatches += dimTotal;
     }
   }

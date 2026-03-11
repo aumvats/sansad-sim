@@ -21,7 +21,7 @@ export function PlaybackControls({
   onScrub,
   counters,
 }: Props) {
-  const progress = duration > 0 ? (playhead / duration) * 100 : 0;
+  const _progress = duration > 0 ? (playhead / duration) * 100 : 0;
 
   return (
     <div

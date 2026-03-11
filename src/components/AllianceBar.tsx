@@ -13,7 +13,7 @@ interface Props {
 
 export function AllianceBar({
   members,
-  partyStances,
+  partyStances: _partyStances,
   totalSeats,
   majorityMark,
   chamberLabel,

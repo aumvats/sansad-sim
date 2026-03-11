@@ -3,7 +3,7 @@ import type { BillObject, PartyStance } from "@/src/types/bill";
 import type { MPProfile } from "@/src/types/mp";
 import type { PartyProfile } from "@/src/types/party";
 import type { JusticeProfile } from "@/src/types/justice";
-import type { SimStage, Timeline, TimelineEvent } from "@/src/types/timeline";
+import type { SimStage, Timeline } from "@/src/types/timeline";
 import type {
   ChamberResult,
   PresidentialAction,

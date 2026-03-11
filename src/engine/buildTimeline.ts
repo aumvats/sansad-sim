@@ -374,7 +374,7 @@ function runChamberVote(
   partyStances: Map<string, PartyStance>,
   bill: BillObject,
   stagger: number,
-  chamber: string
+  _chamber: string
 ): VoteResult {
   let t = startTime;
   let yea = 0;

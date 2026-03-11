@@ -16,7 +16,7 @@ interface Props {
 export function HorseshoeChamber({
   members,
   votes,
-  partyStances,
+  partyStances: _partyStances,
   defections,
   dotRadius,
   onHover,
