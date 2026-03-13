@@ -22,6 +22,7 @@ import { CoalitionTensionMeter } from "./CoalitionTensionMeter";
 import { ExecutivePanel } from "./ExecutivePanel";
 import { SupremeCourtBench } from "./SupremeCourtBench";
 import { OutcomeCard } from "./OutcomeCard";
+import { OnboardingPopup } from "./OnboardingPopup";
 
 const simData = {
   lsMembers: LS_MEMBERS,
@@ -36,6 +37,17 @@ export function SansadSim() {
     useSimulation(simData);
 
   const playback = usePlayback(state.timeline, deriveStateFromPlayhead);
+
+  // Onboarding state
+  const [showOnboarding, setShowOnboarding] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return !localStorage.getItem("sansadsim-onboarded");
+  });
+
+  const handleDismissOnboarding = useCallback(() => {
+    localStorage.setItem("sansadsim-onboarded", "true");
+    setShowOnboarding(false);
+  }, []);
 
   // Tooltip state
   const [hoveredMp, setHoveredMp] = useState<MPProfile | null>(null);
@@ -103,9 +115,13 @@ export function SansadSim() {
           alignItems: "center",
           justifyContent: "center",
           padding: 24,
+          position: "relative",
         }}
       >
         <BillInput onSubmit={handleBillSubmit} />
+        {showOnboarding && (
+          <OnboardingPopup onDismiss={handleDismissOnboarding} />
+        )}
       </div>
     );
   }
